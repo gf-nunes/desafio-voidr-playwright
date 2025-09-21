@@ -1,105 +1,98 @@
-Automação de Testes com Playwright para o Sauce Demo
+# Automação de Testes com Playwright para o Sauce Demo
 
-📝 Descrição do Projeto
-Este projeto consiste em uma suíte de testes automatizados desenvolvida para a plataforma de e-commerce de demonstração Sauce Demo. O objetivo foi criar uma solução robusta e organizada, utilizando Playwright e JavaScript, como parte do desafio técnico para a vaga de SDET na voidr.
+![Playwright](https://img.shields.io/badge/Teste%20com-Playwright-2EAD33?style=for-the-badge&logo=playwright)
+![JavaScript](https://img.shields.io/badge/Linguagem-JavaScript-F7DF1E?style=for-the-badge&logo=javascript)
+![Node.js](https://img.shields.io/badge/Ambiente-Node.js-339933?style=for-the-badge&logo=nodedotjs)
 
-A automação segue o padrão de design Page Object Model (POM), garantindo que o código seja limpo reutilizável e de fácil manutenção.
+## 📝 Descrição do Projeto
 
-✔️ Testes Implementados
-Foram desenvolvidos 12 cenários de teste para garantir a cobertura das principais funcionalidades da aplicação:
+Este projeto consiste em uma suíte de testes automatizados desenvolvida para a plataforma de e-commerce de demonstração [Sauce Demo](https://www.saucedemo.com/). O objetivo foi criar uma solução robusta e organizada, utilizando **Playwright** e **JavaScript**, como parte do desafio técnico para a vaga de SDET na voidr.
 
-- Módulo de Autenticação
-1. [Login] - Login com credenciais válidas.
-2. [Login] - Login com credenciais inválidas.
-3. [Login] - Tentativa de login com usuário bloqueado (locked_out_user).
+A automação segue o padrão de design **Page Object Model (POM)**, garantindo que o código seja limpo, reutilizável e de fácil manutenção.
 
-- Módulo de Inventário e Carrinho
-1. [Carrinho] - Adicionar um item ao carrinho a partir da página de inventário.
-2. [Carrinho] - Remover um item do carrinho a partir da página de inventário.
-3. [Carrinho] - Remover um item a partir da própria página do carrinho.
-4. [Inventário] - Ordenar produtos por preço (menor para o maior).
-5. [Carrinho] - Garantir a persistência do carrinho após o usuário fazer logout e login novamente.
+## ✔️ Testes Implementados
 
-- Módulo de Checkout
-1. [Checkout] - Realizar uma compra completa com sucesso.
-2. [Checkout] - Tentar prosseguir no checkout sem preencher as informações obrigatórias.
-3. [Checkout] - Cancelar uma compra a partir da tela de visão geral do pedido.
+Foram desenvolvidos **12 cenários de teste** para garantir a cobertura das principais funcionalidades da aplicação:
 
-- Testes de Análise Crítica
-1. [Visual] - Verificar se todas as imagens dos produtos na página de inventário são carregadas corretamente.
+#### Módulo de Autenticação
+1.  `[Login]` - Login com credenciais válidas.
+2.  `[Login]` - Login com credenciais inválidas.
+3.  `[Login]` - Tentativa de login com usuário bloqueado (`locked_out_user`).
 
-🏗️ Estrutura do Projeto
-O projeto está organizado da seguinte forma para promover as melhores práticas de automação:
+#### Módulo de Inventário e Carrinho
+4.  `[Carrinho]` - Adicionar um item ao carrinho a partir da página de inventário.
+5.  `[Carrinho]` - Remover um item do carrinho a partir da página de inventário.
+6.  `[Carrinho]` - Remover um item a partir da própria página do carrinho.
+7.  `[Inventário]` - Ordenar produtos por preço (menor para o maior).
+8.  `[Carrinho]` - Garantir a persistência do carrinho após o usuário fazer logout e login novamente.
 
-/
-├── pages/                # Contém as classes Page Objects
-│   ├── login.page.js
-│   ├── inventory.page.js
-│   ├── cart.page.js
-│   └── checkout.page.js
-├── tests/                # Contém os arquivos de teste (specs)
-│   ├── login.spec.js
-│   ├── cart.spec.js
-│   ├── checkout.spec.js
-│   └── extra.spec.js
-├── test-results/         # Gerado pelo Playwright com resultados, traces e screenshots
-├── playwright.config.js  # Arquivo de configuração principal do Playwright
-├── package.json          # Dependências e scripts do projeto
-└── README.md             # Este arquivo :)
+#### Módulo de Checkout
+9.  `[Checkout]` - Realizar uma compra completa com sucesso.
+10. `[Checkout]` - Tentar prosseguir no checkout sem preencher as informações obrigatórias.
+11. `[Checkout]` - Cancelar uma compra a partir da tela de visão geral do pedido.
 
-🚀 Como Executar o Projeto
+#### Testes de Análise Crítica
+12. `[Visual]` - Verificar se todas as imagens dos produtos na página de inventário são carregadas corretamente.
+
+## 🚀 Como Executar o Projeto
+
 Siga os passos abaixo para clonar o repositório e executar a suíte de testes localmente.
 
-Pré-requisitos
-- Node.js (versão 18 ou superior)
-- Git
+### Pré-requisitos
 
-Passos para Instalação
-1. Clone o repositório:
-Bash
-git clone https://github.com/gf-nunes/desafio-voidr-playwright.git
+* **Node.js** (versão 18 ou superior)
+* **Git**
 
-2. Navegue até a pasta do projeto:
-Bash
-cd desafio-voidr-playwright
+### Passos para Instalação
 
-3. Instale as dependências do projeto:
-Bash
-npm install
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/SEU_USUARIO/NOME_DO_SEU_REPOSITORIO.git
+    ```
 
-4. Instale os navegadores do Playwright:
-(Este comando baixa os navegadores necessários: Chromium, Firefox e WebKit)
-Bash
-npx playwright install
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd NOME_DO_SEU_REPOSITORIO
+    ```
 
-Executando os Testes
+3.  **Instale as dependências do projeto:**
+    ```bash
+    npm install
+    ```
+
+4.  **Instale os navegadores do Playwright:**
+    (Este comando baixa os navegadores necessários: Chromium, Firefox e WebKit)
+    ```bash
+    npx playwright install
+    ```
+
+### Executando os Testes
+
 Você pode executar os testes de várias maneiras:
 
-Para rodar todos os testes em modo headless (sem interface gráfica):
+* **Para rodar todos os testes em modo headless (sem interface gráfica):**
+    ```bash
+    npx playwright test
+    ```
 
-Bash
-npx playwright test
+* **Para rodar todos os testes com o navegador visível (headed):**
+    ```bash
+    npx playwright test --headed
+    ```
 
-Para rodar todos os testes com o navegador visível (headed):
+* **Para rodar um arquivo de teste específico (ex: checkout):**
+    ```bash
+    npx playwright test tests/checkout.spec.js
+    ```
 
-Bash
-npx playwright test --headed
+* **Para rodar os testes em um navegador específico (ex: apenas no Chrome):**
+    ```bash
+    npx playwright test --project=chromium
+    ```
 
-Para rodar um arquivo de teste específico (ex: checkout):
+### Visualizando o Relatório de Testes
 
-Bash
-npx playwright test tests/checkout.spec.js
-
-Para rodar os testes em um navegador específico (ex: apenas no Chrome):
-
-Bash
-npx playwright test --project=chromium
-
-- Visualizando o Relatório de Testes
 Após a execução dos testes, um relatório detalhado em HTML é gerado. Para abri-lo, execute o comando:
 
-Bash
+```bash
 npx playwright show-report
-Este comando abrirá o relatório no seu navegador padrão, onde você poderá ver o resultado de cada teste, os passos executados, screenshots e traces de falhas.
-
-Feito por Gislane F. Nunes
