@@ -47,12 +47,12 @@ Siga os passos abaixo para clonar o repositório e executar a suíte de testes l
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/SEU_USUARIO/NOME_DO_SEU_REPOSITORIO.git
+    git clone https://github.com/gf-nunes/desafio-voidr-playwright.git
     ```
 
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd NOME_DO_SEU_REPOSITORIO
+    cd desafio-voidr-playwright
     ```
 
 3.  **Instale as dependências do projeto:**
