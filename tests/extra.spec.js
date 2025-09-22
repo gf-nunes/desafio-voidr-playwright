@@ -1,5 +1,3 @@
-// tests/extra.spec.js
-
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page.js';
 import { InventoryPage } from '../pages/inventory.page.js';
@@ -31,12 +29,9 @@ test.describe('Testes Extras e de Análise Crítica', () => {
 
     for (let i = 0; i < imageCount; i++) {
       const image = images.nth(i);
-      
-      // --- CORREÇÃO APLICADA AQUI ---
-      // Usamos 'evaluate' para rodar uma função no navegador e pegar o valor de 'naturalWidth'.
+
       const naturalWidth = await image.evaluate(img => img.naturalWidth);
       
-      // Agora verificamos se o valor retornado é maior que zero.
       expect(naturalWidth).toBeGreaterThan(0);
     }
   });

@@ -1,5 +1,3 @@
-// tests/cart.spec.js
-
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page.js';
 import { InventoryPage } from '../pages/inventory.page.js';
@@ -55,10 +53,8 @@ test.describe('Funcionalidades do Inventário e Carrinho', () => {
 
     await inventoryPage.goToCart();
     
-    // Espera a página carregar esperando pelo título
     await expect(cartPage.pageTitle).toBeVisible();
 
-    // Com o novo seletor, a verificação agora será precisa
     const productInCart = cartPage.getProductLocatorByName(productName);
     await expect(productInCart).toHaveCount(1);
 
